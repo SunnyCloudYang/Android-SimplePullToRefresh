@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.handmark.pulltorefresh.samples'
+    compileSdk 34
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+
+    defaultConfig {
+        applicationId 'com.handmark.pulltorefresh.samples'
+        minSdk 21
+        targetSdk 34
+        versionCode 2110
+        versionName "2.1.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    implementation project(':library')
+    implementation project(':extras:PullToRefreshListFragment')
+    implementation project(':extras:PullToRefreshViewPager')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.fragment:fragment:1.6.1'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+}

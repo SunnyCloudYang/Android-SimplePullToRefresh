@@ -14,7 +14,8 @@
         android:label="@string/app_name" >
         <activity
             android:name=".LauncherActivity"
-            android:label="PullToRefresh Samples" >
+            android:label="PullToRefresh Samples"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
